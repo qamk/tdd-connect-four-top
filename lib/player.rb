@@ -22,7 +22,7 @@ class Player
       'm' => '35',
       'c' => '36'
     }
-    return "38;5;#{Random.rand(100..200)}" unless colours.keys.include? colour_code
+    return "38;5;#{Random.rand(50..230)}" unless colours.keys.include? colour_code
 
     colours[colour_code]
   end
