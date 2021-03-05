@@ -20,7 +20,6 @@ describe Game do
   # end
 
   describe '#display_grid' do
-
     let(:game_grid_display) { Class.new { extend Grid } }
     let(:grid_to_show) { [%w[O O O O], ['O', 'O', '', 'O'], ['', '', '', 'O']] }
 
@@ -40,7 +39,6 @@ describe Game do
       # identify_diagonals --> (might change mind)
 
   describe '#row_winner' do
-
     subject(:game_row_winner) { described_class.new }
 
     context 'when a player\'s discs are in a sequence of four in a row' do
@@ -58,7 +56,6 @@ describe Game do
   end
 
   describe '#column_winner' do
-
     subject(:game_column_winner) { described_class.new }
 
     context 'when a player\'s discs are in a sequence of four in a column' do
@@ -76,7 +73,6 @@ describe Game do
   end
 
   describe '#either_diagonal' do
-
     subject(:game_diagonal_winner) { described_class.new }
 
     context 'when a player\'s discs are in a sequence of four diagonally' do
@@ -119,7 +115,7 @@ describe Game do
     it 'adds a disc in a specified column' do
       column = 0
       disc = 'O'
-      game_shift.add_disc(column, disc) 
+      game_shift.add_disc(column, disc)
       flattened_grid_instance = game_shift.instance_variable_get(:@grid).flatten
       expect(flattened_grid_instance).to include 'O'
     end
