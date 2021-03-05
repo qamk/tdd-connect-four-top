@@ -3,7 +3,9 @@
 # Rules (including win condition rules)
 module Rules
   def scan_grid(grid)
-    discs = grid.flatten.uniq.sample(2) # randomise the order of the discs to avoid bias
+    discs = grid.flatten.uniq.reject { |disc| disc == "\u25EF" }
+    return unless discs.length == 2
+
     column_winner(grid, discs) or row_winner(grid, discs) or either_diagonal(grid, discs)
   end
 
@@ -12,6 +14,8 @@ module Rules
     altered_grid.each do |group|
       group.chunk { |disk_group| disk_group == disc }.each { |_, chunked_discs| four_in_a_row << chunked_discs }
     end
+    # print "Four in a row for #{disc}\n\tCount: #{altered_grid.flatten.count(disc)}"
+    # four_in_a_row.each { |g| print "#{g}\n" }
     four_in_a_row.any? { |group| group.count(disc) == 4 } ? disc : false
   end
 
@@ -63,7 +67,6 @@ module Rules
       grid[row][col]
     end
   end
-
 
   # Returns the right [row, col] indices much more clearly as its own method
   def diagonals_helper(last_row, row_size, col_size)
