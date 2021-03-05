@@ -12,10 +12,10 @@ module Grid
   # end
 
   def display_grid(grid)
-    (0..6).times do |index|
-      grid.each { |column| print("| #{column[index]}") }
+    grid.reverse.each do |row|
+      row.each { |column| print "|  #{column}  " }
       puts
     end
-    print "#{'\/' * 7} "
+    puts
   end
 end
