@@ -1,5 +1,5 @@
 # Connect Four (using Test Driven Development)
-This program was mostly about employing **Test Driven Development** (TDD) using Rspec. TDD, in short, requires you to make tests before making any methods/functions that would pass that test. After writing code that would result in passing these tests, you can then refactor (redesign) your code with little issue. [Here](https://www.madetech.com/blog/9-benefits-of-test-driven-development) is more information. See the bottom for my final thoughts and some screen captures.
+This program was mostly about employing **Test Driven Development** (TDD) using Rspec. TDD, in short, requires you to make tests before making any methods/functions that would pass that test. After writing code that would result in passing these tests, you can then refactor (redesign) your code with little issue. [Here](https://www.madetech.com/blog/9-benefits-of-test-driven-development) is more information. See the bottom for my final thoughts and some screen captures. [Replt.it link](https://repl.it/@qamk/tdd-connect-four-top#README.md)
 
 ## Aim
 So, the main aim revolved around writing tests beforehand, write passing code and then re-write said code to read nicely and contain small, specific and simple methods.
